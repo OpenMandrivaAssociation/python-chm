@@ -1,6 +1,6 @@
 %define name		python-chm
 %define realname	pychm
-%define version 0.8.3
+%define version 0.8.4
 
 Summary: Python package to handle CHM files
 Name:			%{name}
