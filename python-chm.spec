@@ -11,6 +11,7 @@ License: GPL
 Group: Development/Python
 BuildRequires:	chmlib-devel
 BuildRequires:	python-devel
+BuildRoot: %{_tmppath}/%{name}-buildroot
 Url: http://gnochm.sourceforge.net
 Provides: pychm
 
