@@ -5,7 +5,7 @@
 Summary: Python package to handle CHM files
 Name:			%{name}
 Version:		%{version}
-Release:		%mkrel 4
+Release:		%mkrel 5
 Source0: %{realname}-%{version}.tar.bz2
 License: GPL
 Group: Development/Python
