@@ -34,7 +34,7 @@ python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root)
 %doc README NEWS COPYING ChangeLog
-
+%py_puresitedir/*
