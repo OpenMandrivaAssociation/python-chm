@@ -37,4 +37,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc README NEWS COPYING ChangeLog
-%py_puresitedir/*
+%py_platsitedir/*
