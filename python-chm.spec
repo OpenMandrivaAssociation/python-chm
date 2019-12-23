@@ -48,7 +48,7 @@ rm -rf *.egg-info/
 %install
 %py_install
 
-%files -n python-%{realnamename}
+%files -n python-%{realname}
 %license COPYING
 %doc README
 %{python_sitearch}/chm/
