@@ -7,7 +7,7 @@ Name:			%{name}
 Version:		%{version}
 Release:		1
 Url: http://gnochm.sourceforge.net
-Source0: https://pypi.io/packages/source/p/%{realname_name}/%{realname_name}-%{version}.tar.gz
+Source0: https://pypi.io/packages/source/p/%{realnamename}/%{realnamename}-%{version}.tar.gz
 License: GPL
 Group: Development/Python
 BuildRequires:	chmlib-devel
@@ -22,14 +22,14 @@ chmlib and some additional classes and functions. They are
 used to access MS-ITSS encoded files - Compressed Html Help
 files (.chm).
 
-%package -n	python-%{realname_name}
+%package -n	python-%{realnamename}
 Summary:	Python package to handle CHM files
 BuildRequires:	python-devel
 BuildRequires:	python3dist(setuptools)
 %{?python_provide:%python_provide python-%{realname_name}}
 %{?python_provide:%python_provide python-chm}
 
-%description -n	python-%{realname_name}
+%description -n	python-%{realnamename}
 The chm package provides three modules, chm, chmlib and extra,
 which provide access to the API implemented by the C library
 chmlib and some additional classes and functions. They are
@@ -37,7 +37,7 @@ used to access MS-ITSS encoded files - Compressed Html Help
 files (.chm).
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{realnamename}-%{version}
 
 # Remove bundled egg-info
 rm -rf *.egg-info/
@@ -48,7 +48,7 @@ rm -rf *.egg-info/
 %install
 %py_install
 
-%files -n python-%{realname_name}
+%files -n python-%{realnamename}
 %license COPYING
 %doc README
 %{python_sitearch}/chm/
