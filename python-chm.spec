@@ -29,7 +29,7 @@ BuildRequires:	python3dist(setuptools)
 %{?python_provide:%python_provide python-%{realname_name}}
 %{?python_provide:%python_provide python-chm}
 
-%description -n	python-%{pypi_name}
+%description -n	python-%{realname_name}
 The chm package provides three modules, chm, chmlib and extra,
 which provide access to the API implemented by the C library
 chmlib and some additional classes and functions. They are
@@ -48,7 +48,7 @@ rm -rf *.egg-info/
 %install
 %py_install
 
-%files -n python-%{pypi_name}
+%files -n python-%{realname_name}
 %license COPYING
 %doc README
 %{python_sitearch}/chm/
