@@ -1,18 +1,18 @@
 %define name		python-chm
 %define realname	pychm
-%define version 0.8.4
+%define version 0.8.6
 
 Summary: Python package to handle CHM files
 Name:			%{name}
 Version:		%{version}
-Release:		6
-Source0: %{realname}-%{version}.tar.bz2
+Release:		1
+Url: http://gnochm.sourceforge.net
+Source0: https://pypi.io/packages/source/p/%{realname_name}/%{realname_name}-%{version}.tar.gz
 License: GPL
 Group: Development/Python
 BuildRequires:	chmlib-devel
 BuildRequires:	python-devel
 BuildRoot: %{_tmppath}/%{name}-buildroot
-Url: http://gnochm.sourceforge.net
 Provides: pychm
 
 %description
@@ -22,22 +22,37 @@ chmlib and some additional classes and functions. They are
 used to access MS-ITSS encoded files - Compressed Html Help
 files (.chm).
 
+%package -n	python-%{realname_name}
+Summary:	Python package to handle CHM files
+BuildRequires:	python-devel
+BuildRequires:	python3dist(setuptools)
+%{?python_provide:%python_provide python-%{realname_name}}
+%{?python_provide:%python_provide python-chm}
+
+%description -n	python3-%{pypi_name}
+The chm package provides three modules, chm, chmlib and extra,
+which provide access to the API implemented by the C library
+chmlib and some additional classes and functions. They are
+used to access MS-ITSS encoded files - Compressed Html Help
+files (.chm).
+
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{pypi_name}-%{version}
+
+# Remove bundled egg-info
+rm -rf *.egg-info/
 
 %build
-env CFLAGS="$RPM_OPT_FLAGS" python setup.py build
+%py_build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%py_install
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%files
-%defattr(-,root,root)
-%doc README NEWS COPYING ChangeLog
-%py_platsitedir/*
+%files -n python-%{pypi_name}
+%license COPYING
+%doc README
+%{python_sitearch}/chm/
+%{python_sitearch}/pychm-%{version}-py?.?.egg-info/
 
 
 %changelog
