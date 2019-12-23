@@ -29,7 +29,7 @@ BuildRequires:	python3dist(setuptools)
 %{?python_provide:%python_provide python-%{realname_name}}
 %{?python_provide:%python_provide python-chm}
 
-%description -n	python3-%{pypi_name}
+%description -n	python-%{pypi_name}
 The chm package provides three modules, chm, chmlib and extra,
 which provide access to the API implemented by the C library
 chmlib and some additional classes and functions. They are
