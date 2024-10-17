@@ -6,7 +6,7 @@ Summary: Python package to handle CHM files
 Name:			%{name}
 Version:		%{version}
 Release:		1
-Url: http://gnochm.sourceforge.net
+Url: https://gnochm.sourceforge.net
 Source0: https://pypi.io/packages/source/p/%{realname}/%{realname}-%{version}.tar.gz
 License: GPL
 Group: Development/Python
